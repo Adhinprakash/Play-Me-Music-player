@@ -104,13 +104,12 @@ class _AllmusicState extends State<Allmusic> {
                     ),
                   ),
                   Expanded(
-                    child: FutureBuilder<List<SongModel>>(
+                    child: FutureBuilder<List<SongModel>>(  
                         future: _audioQuery.querySongs(
                             sortType: null,
                             orderType: OrderType.ASC_OR_SMALLER,
                             uriType: UriType.EXTERNAL,
                             ignoreCase: true,
-                            path: '/storage/emulated/0/ALLMUSIC'
                             ),
                         builder: (context, items) {
                           if (items.data == null) {
@@ -125,10 +124,19 @@ class _AllmusicState extends State<Allmusic> {
                           }if(_audioplayer.audioSource==null){
                             _audioplayer.setAudioSource(Getallsongscontroller.createsongslist(items.data!));
                           }
+                    List<SongModel> song=items.data!;
+                    for(var element in song){
+                      if(element.fileExtension.contains("mp3")&&
+                      !element.data.contains("/WhatsApp Audio")&&
+                      !element.displayName.contains("AUD")
+                      ){
+                           stmodel.add(element);
+                      }
+                    }
                         //  listview bulider//
-                        stmodel=items.data!;
-                        FavourateDB.initialized(items.data!);
-                          return Allmusictile(songmodel: items.data!);
+                       
+                        FavourateDB.initialized(stmodel);
+                          return Allmusictile(songmodel:stmodel);
                         }),
                   ),
              

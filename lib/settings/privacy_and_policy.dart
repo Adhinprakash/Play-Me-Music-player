@@ -17,14 +17,12 @@ class PrivacyandPolicy extends StatelessWidget {
         child: ListView(
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 IconButton(onPressed: (){
                 Navigator.pop(context);
                 }, icon: const Icon(Icons.arrow_back_ios,color: Color.fromARGB(255, 192, 184, 184),size: 25,)),
-           const  Padding(
-               padding: EdgeInsets.only(left: 70),
-               child:    Text('Privacy and Policy',style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.w400,),),
-             )
+        const Text('Privacy and Policy',style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.w400,),)
               ],
             ),
             const SizedBox(

@@ -21,10 +21,7 @@ class AboutPlayme extends StatelessWidget {
                 IconButton(onPressed: (){
               Navigator.pop(context);
                 }, icon: const Icon(Icons.arrow_back_ios,color: Color.fromARGB(255, 192, 184, 184),size: 25,)),
-           const  Padding(
-               padding:  EdgeInsets.only(left: 70),
-               child:   Text('About playMe',style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.w400,),),
-             )
+          const Text('About playMe',style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.w400,),)
               ],
             ),
             const SizedBox(

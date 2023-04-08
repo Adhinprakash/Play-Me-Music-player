@@ -30,17 +30,14 @@ class TermsandContion extends StatelessWidget {
                         color: Color.fromARGB(255, 192, 184, 184),
                         size: 25,
                       )),
-                  const Padding(
-                    padding:  EdgeInsets.only(left: 45),
-                    child:  Text(
-                      'Terms and Contition',
-                      style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  )
+                const     Text(
+                     'Terms and Contition',
+                     style: TextStyle(
+                       fontSize: 25,
+                       color: Colors.white,
+                       fontWeight: FontWeight.w400,
+                     ),
+                   )
                 ],
               ),
               const SizedBox(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:myapp/DB/functions/functionplaylist.dart';
 import 'package:myapp/DB/model/model.dart';
+import 'package:myapp/allmusic/All_music.dart';
 import 'package:myapp/page-1/art.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 
@@ -60,26 +61,19 @@ class _PlaylistsongaddState extends State<Playlistsongadd> {
               ),
             const  SizedBox(height: 10,),
           Expanded(child: FutureBuilder<List<SongModel>>(
-            future: audioQuery.querySongs(
-              sortType: null,
-              orderType: OrderType.ASC_OR_SMALLER,
-              uriType: UriType.EXTERNAL,
-              ignoreCase: true,
-                path: '/storage/emulated/0/ALLMUSIC'
-            ),
             builder: (context, item) {
-              if (item.data == null) {
+              if (stmodel == null) {
                 return const CircularProgressIndicator();
               }
-              if (item.data!.isEmpty) {
+              if (stmodel.isEmpty) {
                 return const Center(child: Text('No Songs Available'));
               }
               return ListView.builder(
-                itemCount: item.data!.length,
+                itemCount: stmodel.length,
                 itemBuilder: (context, index) {
                   return ListTile(
                     leading: QueryArtworkWidget(
-                      id: item.data![index].id,
+                      id: stmodel[index].id,
                       type: ArtworkType.AUDIO,
                       artworkHeight: 60,
                       artworkWidth: 60,
@@ -96,22 +90,22 @@ class _PlaylistsongaddState extends State<Playlistsongadd> {
                       artworkBorder: BorderRadius.circular(10),
                       artworkFit: BoxFit.cover,
                     ),
-                    title: Text(item.data![index].displayNameWOExt,
+                    title: Text(stmodel[index].displayNameWOExt,
                         maxLines: 1,
                         style: const TextStyle(color: Colors.white70)),
                     subtitle: Text(
-                      item.data![index].artist!,
+                      stmodel[index].artist!,
                       style: const TextStyle(color: Colors.white70),
                       maxLines: 1,
                     ),
                     trailing: Wrap(
                       children: [
-                        !widget.playlist.isvalue(item.data![index].id)
+                        !widget.playlist.isvalue(stmodel[index].id)
                             ? IconButton(
                                 onPressed: () {
-                                  Getallsongscontroller.copysong = item.data!;
+                                  Getallsongscontroller.copysong = stmodel;
                                   setState(() {
-                                    songaddtoplaylist(item.data![index]);
+                                    songaddtoplaylist(stmodel[index]);
                                     PlaylistDB.playlistnotifier.notifyListeners();
                                   });
                                 },
@@ -121,7 +115,7 @@ class _PlaylistsongaddState extends State<Playlistsongadd> {
                                 onPressed: () {
                                   setState(() {
                                       widget.playlist
-                                      .deletedata(item.data![index].id);
+                                      .deletedata(stmodel[index].id);
                                   });
                                 
                                   const removesongplaylistsnake = SnackBar(

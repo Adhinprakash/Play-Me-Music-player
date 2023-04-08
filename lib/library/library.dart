@@ -20,21 +20,15 @@ class Libraryscreen extends StatelessWidget {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                IconButton(onPressed: (){
-                    Navigator.of(context).pushAndRemoveUntil(
-                              MaterialPageRoute(
-                                  builder: (context) => const screenhome()),
-                              (route) => false);
-                }, icon: const Icon(Icons.arrow_back_ios,color: Color.fromARGB(255, 192, 184, 184),size: 25,)),
-           const  Padding(
-               padding:  EdgeInsets.only(left: 110),
-               child:   Text('Library',style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.w600,),),
-             )
-              ],
-            ),
+            IconButton(onPressed: (){
+                Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(
+                              builder: (context) => const screenhome()),
+                          (route) => false);
+            }, icon: const Icon(Icons.arrow_back_ios,color: Color.fromARGB(255, 192, 184, 184),size: 25,)),
+          const   Center(child: Text('Library',style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.w600,),)),
             const SizedBox(
               height: 20,
             ),     

@@ -35,7 +35,7 @@ class _AllmusictileState extends State<Allmusictile> {
         return SizedBox(
           height:65 ,
           child: ListTile(
-            leading: QueryArtworkWidget(
+            leading: QueryArtworkWidget( 
               artworkBorder: BorderRadius.circular(4),
               id: widget.songmodel[index].id,
               type: ArtworkType.AUDIO,

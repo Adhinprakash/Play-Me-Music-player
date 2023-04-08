@@ -28,15 +28,17 @@ class Settingsscreen extends StatelessWidget {
         ),
         child: ListView(
           children: [
-            Row(
+            Column(
+              
               children: [
-                IconButton(onPressed: (){
-                  Navigator.pop(context);
-                }, icon: const Icon(Icons.arrow_back_ios,color: Color.fromARGB(255, 109, 106, 106),size: 30,)),
-           const Padding(
-               padding:  EdgeInsets.only(left:100),
-               child:    Text('Settings',style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.w700,),),
-             )
+                Row(
+                  children: [
+                    IconButton(onPressed: (){
+                      Navigator.pop(context);
+                    }, icon: const Icon(Icons.arrow_back_ios,color: Color.fromARGB(255, 109, 106, 106),size: 30,)),
+  const  Center(child: Text('Settings',style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.w700,),))
+                  ],
+                ),
               ],
             ),
             const SizedBox(

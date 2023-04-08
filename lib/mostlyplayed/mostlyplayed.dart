@@ -40,15 +40,12 @@ class _MostlyplayedscreenState extends State<Mostlyplayedscreen> {
                         color: Color.fromARGB(255, 192, 184, 184),
                         size: 25,
                       )),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 70),
-                    child: Text(
-                      ' Mostly Played',
-                      style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
-                      ),
+               const   Text(
+                    ' Mostly Played',
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
                     ),
                   )
                 ],

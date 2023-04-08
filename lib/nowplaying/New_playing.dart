@@ -227,14 +227,17 @@ class _NowplayingState extends State<Nowplaying> {
                         padding: const EdgeInsets.only(left: 36),
                         child: Row(
                           children: [
-                            Text(
-                              widget.songsModel[currentIndex].displayNameWOExt,
-                              overflow: TextOverflow.fade,
-                              maxLines: 1,
-                              style: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white),
+                            SizedBox(
+                              width: 300,
+                              child: Text(
+                                widget.songsModel[currentIndex].displayNameWOExt,
+                                overflow: TextOverflow.fade,
+                                maxLines: 1,
+                                style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white),
+                              ),
                             ),
                           ],
                         ),

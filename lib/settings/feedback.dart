@@ -43,15 +43,12 @@ class Feedbackscreen extends StatelessWidget {
                         color: Color.fromARGB(255, 192, 184, 184),
                         size: 25,
                       )),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 100),
-                    child: Text(
-                      'Feedback',
-                      style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
-                      ),
+                 const Text(
+                    'Feedback',
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
                     ),
                   )
                 ],

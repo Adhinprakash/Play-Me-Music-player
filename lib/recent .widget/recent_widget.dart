@@ -26,24 +26,23 @@ class _RecentwidgetState extends State<Recentwidget> {
                       AssetImage('assets/page-1/images/android-large-1.png'),fit: BoxFit.cover)),
           child: ListView(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 320),
-                child: Row(
-                  children: [
-                    IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        }, icon: const Icon(Icons.arrow_back_ios,color: Color.fromARGB(255, 141, 128, 128),)),
-                  ],
-                ),
+              Row(
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      }, icon: const Icon(Icons.arrow_back_ios,color: Color.fromARGB(255, 141, 128, 128),)),
+                ],
               ),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children:   [
-                 const  Text('Recently played',style: TextStyle(fontSize: 25,color:Colors.white),),
-                   IconButton(onPressed: (){}, icon: const Icon(Icons.history,color: Color.fromARGB(255, 148, 138, 138) ,))
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children:   [
+                   const  Text('Recently played',style: TextStyle(fontSize: 25,color:Colors.white),),
+                     IconButton(onPressed: (){}, icon: const Icon(Icons.history,color: Color.fromARGB(255, 148, 138, 138) ,))
+                    ],
+                  ),
                 ),
           const   Recentlyplayedlist()  
 

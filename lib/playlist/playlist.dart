@@ -153,9 +153,10 @@ class _PLaylistwidgetState extends State<PLaylistwidget> {
                                                                       data)));
                                                 },
                                               ),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 146),
+                                              Positioned(
+                                                top:2,
+                                                right: 2,
+                                                left: 130,
                                                 child: PopupMenuButton(
                                                   color: const Color.fromARGB(
                                                       255, 163, 227, 223),
