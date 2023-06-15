@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/mostlyplayed/mostlyplayed.dart';
 import 'package:myapp/page-1/home.dart';
-import 'package:myapp/playlist/playlist.dart';
+import 'package:myapp/presentation/screens/playlist/playlist.dart';
+
+import '../presentation/screens/mostlyplayed/mostlyplayed.dart';
 
 class Libraryscreen extends StatelessWidget {
   const Libraryscreen({super.key});
@@ -36,7 +37,7 @@ class Libraryscreen extends StatelessWidget {
              child: ListView(
               children:  [
                 ListTile(
-                  onTap: () =>  Navigator.push(context, MaterialPageRoute(builder:(context) => const Mostlyplayedscreen() ,)) ,
+                  onTap: () =>  Navigator.push(context, MaterialPageRoute(builder:(context) =>  Mostlyplayedscreen() ,)) ,
                   title: const Text('Mostly Played',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w300,color: Colors.white),),
                   leading:SizedBox(
                     width: 80,
@@ -55,7 +56,7 @@ class Libraryscreen extends StatelessWidget {
 
                   height: 20,
                 ),  ListTile(
-                   onTap: () =>  Navigator.push(context, MaterialPageRoute(builder:(context) => const PLaylistwidget() ,)) ,
+                   onTap: () =>  Navigator.push(context, MaterialPageRoute(builder:(context) => PLaylistwidget() ,)) ,
 
                   title: const Text('PlayList',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w300,color: Colors.white),),
                   leading:SizedBox(

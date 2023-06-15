@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/allmusic/All_music.dart';
-import 'package:myapp/favourates/favourate.dart';
 import 'package:myapp/library/library.dart';
-import 'package:myapp/miniplayer/miniplayer.dart';
 import 'package:myapp/page-1/art.dart';
+import 'package:myapp/presentation/screens/allmusic/All_music.dart';
+import 'package:myapp/presentation/screens/miniplayer/miniplayer.dart';
+import 'package:myapp/presentation/screens/search/search.dart';
 
-import '../search/search.dart';
+import '../presentation/screens/favourates/favourate.dart';
+
 
 // ignore: camel_case_types
 class screenhome extends StatefulWidget {
@@ -18,7 +19,7 @@ class screenhome extends StatefulWidget {
 // ignore: camel_case_types
 class _screenhomeState extends State<screenhome> {
   int _currentselectedindex=0;
-    List  pages =  [ const Allmusic(), const Search() ,const  Favourate(), const Libraryscreen()];
+    List  pages =  [ Allmusic(), SearchWidget() ,const  Favourate(), const Libraryscreen()];
 
   @override
   Widget build(BuildContext context) {
